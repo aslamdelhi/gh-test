@@ -1,0 +1,12 @@
+name: "pull-request-closed"
+
+on:
+  pull_request:
+    types: 
+      - closed
+jobs:
+  if_merged:
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+        echo "The PR is closed ONLY"
