@@ -2,7 +2,7 @@ name: "pull-requests"
 
 on:
   pull_request:
-    types: [opened, edited, reopend]
+    types: [opened, edited, synchronize, reopend]
 
 jobs:
   if_merged:
