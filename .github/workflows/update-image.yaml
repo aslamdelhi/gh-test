@@ -1,0 +1,13 @@
+name: "update-image"
+
+on:
+  workflow_run:
+    workflows: [dev-image, staging-image]
+    types:
+      - completed
+jobs:
+  update-image:
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+        echo "Image tag has been updated"
