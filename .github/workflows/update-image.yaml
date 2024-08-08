@@ -2,11 +2,13 @@ name: "update-image"
 
 on:
   workflow_run:
-    workflows: [dev-image, staging-image]
+    workflows:
+      - dev-image
     types:
       - completed
 jobs:
   update-image:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
     - run: |
