@@ -1,13 +1,13 @@
-name: "pull-request-merged-closed"
+name: "dev-image"
 
 on:
   pull_request:
     types: 
       - closed
 jobs:
-  if_merged:
+  dev-image-creation:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
     - run: |
-        echo "The PR is closed and merged"
+        echo "dev image has been created"

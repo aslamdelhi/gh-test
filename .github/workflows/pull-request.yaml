@@ -5,8 +5,7 @@ on:
     types: [opened, edited, synchronize, reopend]
 
 jobs:
-  if_merged:
-#    if: github.event.pull_request.merged == true
+  pr-check:
     runs-on: ubuntu-latest
     steps:
     - run: |
